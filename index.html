@@ -6,19 +6,19 @@
 <title>Алина — Вселенская терапия</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --dark:#2C2825;
-    --dark-2:#332E2A;
-    --cream:#F0EDE7;
-    --beige:#C4B5A0;
-    --line:#D5CCBC;
-    --gold:#B8705A;
+    --dark-2:#343230;
+    --cream:#FFFFFF;
+    --beige:#C0B4A4;
+    --line:#E2DED8;
+    --gold:#B07050;
     --ink:#2C2825;
-    --ink-soft:#6B7870;
-    --cream-soft:#E5DFD5;
-    --display:'Cormorant Garamond',Georgia,serif;
+    --ink-soft:#78756F;
+    --cream-soft:#F5F3EF;
+    --display:'Raleway',sans-serif;
     --body:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     --maxw:1140px;
   }
@@ -88,8 +88,9 @@
 
   /* ABOUT */
   .about .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
-  .portrait{aspect-ratio:4/5;background:var(--cream-soft);border:1px solid var(--line);border-radius:2px;display:flex;align-items:center;justify-content:center;color:var(--beige);font-size:12px;letter-spacing:.25em;text-transform:uppercase;position:relative}
-  .portrait .spiral{position:absolute;width:54px;height:54px;bottom:18px;right:18px;opacity:.5}
+  .portrait{aspect-ratio:4/5;border-radius:2px;overflow:hidden;position:relative}
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:center 10%}
+  .portrait .spiral{position:absolute;width:54px;height:54px;bottom:18px;right:18px;opacity:.45}
   .about p{margin-bottom:18px;color:var(--ink-soft);font-weight:300}
   .about .big{font-family:var(--display);font-size:clamp(22px,2.6vw,30px);line-height:1.35;color:var(--ink);font-weight:500;margin-bottom:24px}
   @media(max-width:800px){.about .grid{grid-template-columns:1fr;gap:34px}}
@@ -227,7 +228,10 @@
 <section class="about" id="about">
   <div class="wrap">
     <div class="grid reveal">
-      <div class="portrait">фото<svg class="spiral" viewBox="0 0 100 100" aria-hidden="true"><path data-spiral="3"></path></svg></div>
+      <div class="portrait">
+        <img src="images/alina.jpg" alt="Алина — психолог-терапевт">
+        <svg class="spiral" viewBox="0 0 100 100" aria-hidden="true"><path data-spiral="3"></path></svg>
+      </div>
       <div>
         <span class="eyebrow">Обо мне</span>
         <p class="big" style="margin-top:18px">Меня зовут Алина. Я помогаю увидеть причину там, где остались одни вопросы.</p>
