@@ -44,20 +44,21 @@
   .spiral path{fill:none;stroke:var(--gold);stroke-width:2;stroke-linecap:round}
 
   /* NAV */
-  nav{position:absolute;top:0;left:0;right:0;z-index:30}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:24px 32px}
+  nav{position:fixed;top:0;left:0;right:0;z-index:30;background:var(--dark);border-bottom:1px solid rgba(201,184,170,.12)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:20px 32px}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
   .brand .spiral{width:30px;height:30px}
-  .brand .name{font-family:var(--display);font-size:22px;font-weight:600;letter-spacing:.5px;color:var(--ink)}
+  .brand .name{font-family:var(--display);font-size:22px;font-weight:600;letter-spacing:.5px;color:var(--cream)}
   .navlinks{display:flex;gap:32px;align-items:center}
-  .navlinks a{font-size:13px;font-weight:500;letter-spacing:.02em;text-decoration:none;color:var(--ink);opacity:.78;transition:opacity .2s}
+  .navlinks a{font-size:13px;font-weight:500;letter-spacing:.02em;text-decoration:none;color:var(--cream);opacity:.72;transition:opacity .2s}
   .navlinks a:hover{opacity:1}
-  .navlinks .nav-cta{opacity:1;border:1px solid var(--beige);padding:9px 18px;border-radius:1px}
-  .navlinks .nav-cta:hover{border-color:var(--dark)}
+  .navlinks .nav-cta{opacity:1;border:1px solid rgba(201,184,170,.45);padding:9px 18px;border-radius:1px;color:var(--cream)}
+  .navlinks .nav-cta:hover{border-color:var(--beige);background:rgba(201,184,170,.07)}
   @media(max-width:780px){.navlinks a:not(.nav-cta){display:none}}
+  .hero{padding-top:172px}
 
   /* HERO */
-  .hero{position:relative;padding:172px 0 96px;overflow:hidden}
+  .hero{position:relative;padding:172px 0 96px;overflow:hidden;padding-top:172px}
   .hero .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
   .hero h1{font-size:clamp(40px,6vw,74px);margin:24px 0 26px;letter-spacing:.3px}
   .hero h1 em{font-style:italic;color:var(--gold)}
