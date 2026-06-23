@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Алина Шведова — Вселенская терапия</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dark:#2C2825;
+    --dark-2:#332E2A;
+    --cream:#FAF8F4;
+    --beige:#C9B8AA;
+    --line:#E6DDD2;
+    --gold:#B8995A;
+    --ink:#2C2825;
+    --ink-soft:#5C544C;
+    --cream-soft:#EFE9E0;
+    --display:'Cormorant Garamond',Georgia,serif;
+    --body:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --maxw:1140px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+  h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.12}
+  .eyebrow{font-family:var(--body);font-weight:600;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+  a{color:inherit}
+  .btn{display:inline-block;font-family:var(--body);font-weight:500;font-size:14px;letter-spacing:.04em;text-decoration:none;cursor:pointer;padding:15px 30px;border-radius:1px;border:1px solid transparent;transition:all .28s ease}
+  .btn-primary{background:var(--dark);color:var(--cream)}
+  .btn-primary:hover{background:#171411;transform:translateY(-2px)}
+  .btn-line{background:transparent;color:var(--ink);border-color:var(--beige)}
+  .btn-line:hover{border-color:var(--dark);transform:translateY(-2px)}
+  .btn-cream{background:var(--cream);color:var(--dark)}
+  .btn-cream:hover{background:#fff;transform:translateY(-2px)}
+  .on-dark .btn-line{color:var(--cream);border-color:rgba(201,184,170,.45)}
+  .on-dark .btn-line:hover{border-color:var(--beige)}
+
+  /* spiral mark */
+  .spiral{display:block}
+  .spiral path{fill:none;stroke:var(--gold);stroke-width:2;stroke-linecap:round}
+
+  /* NAV */
+  nav{position:absolute;top:0;left:0;right:0;z-index:30}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:24px 32px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand .spiral{width:30px;height:30px}
+  .brand .name{font-family:var(--display);font-size:22px;font-weight:600;letter-spacing:.5px;color:var(--ink)}
+  .navlinks{display:flex;gap:32px;align-items:center}
+  .navlinks a{font-size:13px;font-weight:500;letter-spacing:.02em;text-decoration:none;color:var(--ink);opacity:.78;transition:opacity .2s}
+  .navlinks a:hover{opacity:1}
+  .navlinks .nav-cta{opacity:1;border:1px solid var(--beige);padding:9px 18px;border-radius:1px}
+  .navlinks .nav-cta:hover{border-color:var(--dark)}
+  @media(max-width:780px){.navlinks a:not(.nav-cta){display:none}}
+
+  /* HERO */
+  .hero{position:relative;padding:172px 0 96px;overflow:hidden}
+  .hero .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(40px,6vw,74px);margin:24px 0 26px;letter-spacing:.3px}
+  .hero h1 em{font-style:italic;color:var(--gold)}
+  .hero .lead{font-size:clamp(16px,1.7vw,18px);font-weight:300;color:var(--ink-soft);max-width:520px;margin-bottom:36px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-mark{display:flex;justify-content:center;align-items:center}
+  .hero-mark .spiral{width:min(320px,80%);height:auto}
+  .hero-mark .spiral path{stroke-width:1.6}
+  @media(max-width:820px){.hero .grid{grid-template-columns:1fr}.hero-mark{display:none}}
+
+  /* TRUST STRIP */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--cream)}
+  .trust .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 30px;padding:22px 32px}
+  .trust span{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:30px}
+  .trust span::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--beige)}
+  .trust span:last-child::after{display:none}
+
+  /* SECTIONS */
+  section{padding:104px 0}
+  .sec-head{max-width:660px;margin-bottom:56px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(30px,4.4vw,50px);margin-top:16px;letter-spacing:.3px}
+  .sec-head h2 em{font-style:italic;color:var(--gold)}
+
+  /* ABOUT */
+  .about .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
+  .portrait{aspect-ratio:4/5;background:var(--cream-soft);border:1px solid var(--line);border-radius:2px;display:flex;align-items:center;justify-content:center;color:var(--beige);font-size:12px;letter-spacing:.25em;text-transform:uppercase;position:relative}
+  .portrait .spiral{position:absolute;width:54px;height:54px;bottom:18px;right:18px;opacity:.5}
+  .about p{margin-bottom:18px;color:var(--ink-soft);font-weight:300}
+  .about .big{font-family:var(--display);font-size:clamp(22px,2.6vw,30px);line-height:1.35;color:var(--ink);font-weight:500;margin-bottom:24px}
+  @media(max-width:800px){.about .grid{grid-template-columns:1fr;gap:34px}}
+
+  /* METHOD (dark) */
+  .method{background:var(--dark);color:var(--cream)}
+  .method .eyebrow{color:var(--beige)}
+  .method h2{color:var(--cream)}
+  .method .intro{color:#D9CFC2;font-weight:300;max-width:620px;margin-top:20px;font-size:17px}
+  .method .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:60px}
+  .mcard{border-top:1px solid rgba(201,184,170,.3);padding-top:26px}
+  .mcard .n{font-family:var(--display);font-size:34px;color:var(--gold);line-height:1}
+  .mcard h3{font-size:24px;color:var(--cream);margin:16px 0 12px;font-weight:500}
+  .mcard p{font-size:15px;color:#C9BEB0;font-weight:300}
+  @media(max-width:800px){.method .cards{grid-template-columns:1fr;gap:32px}}
+
+  /* AUDIENCE */
+  .audience .aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .aud{background:var(--cream);border:1px solid var(--line);border-radius:2px;padding:32px 30px;transition:all .28s ease}
+  .aud:hover{border-color:var(--beige);transform:translateY(-3px)}
+  .aud .num{font-family:var(--display);font-size:15px;color:var(--gold);letter-spacing:.1em}
+  .aud h3{font-size:23px;margin:12px 0 12px;font-weight:500;line-height:1.25}
+  .aud p{font-size:15px;color:var(--ink-soft);font-weight:300}
+  @media(max-width:860px){.audience .aud-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.audience .aud-grid{grid-template-columns:1fr}}
+
+  /* BOOKING */
+  .booking{background:var(--cream-soft)}
+  .book-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+  .book-note .badge{display:inline-block;border:1px solid var(--beige);color:var(--ink-soft);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border-radius:1px;margin-bottom:20px}
+  .book-note p{color:var(--ink-soft);font-weight:300}
+  .cal{background:var(--cream);border:1px solid var(--line);border-radius:3px;padding:24px}
+  .cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+  .cal-head .m{font-family:var(--display);font-size:21px;font-weight:600}
+  .cal-head .arrows{color:var(--beige);font-size:12px;letter-spacing:.12em}
+  .slots{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .slot{text-align:center;font-size:13px;font-weight:500;padding:12px 0;border-radius:1px;border:1px solid var(--line)}
+  .slot.free{background:var(--cream);cursor:pointer;transition:.2s}
+  .slot.free:hover{background:var(--dark);color:var(--cream);border-color:var(--dark)}
+  .slot.busy{background:transparent;color:var(--beige);border-style:dashed}
+  .cal .btn{margin-top:18px;display:block;text-align:center}
+  @media(max-width:800px){.book-grid{grid-template-columns:1fr;gap:32px}}
+
+  /* PRICING (dark) */
+  .pricing{background:var(--dark);color:var(--cream)}
+  .pricing .eyebrow{color:var(--beige)}
+  .pricing h2{color:var(--cream)}
+  .price-card{max-width:580px;margin:0 auto;border:1px solid rgba(201,184,170,.3);border-radius:3px;padding:48px 48px 42px;text-align:center;background:var(--dark-2)}
+  .price-card .ttl{font-family:var(--display);font-size:28px;color:var(--cream);font-weight:500}
+  .price-card .meta{color:var(--beige);font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin:12px 0 4px}
+  .price-card .amount{font-family:var(--display);font-size:34px;color:var(--gold);margin-bottom:26px}
+  .price-card ul{list-style:none;text-align:left;margin:0 auto 32px;max-width:400px;display:grid;gap:14px}
+  .price-card li{display:flex;gap:14px;color:#D9CFC2;font-size:15px;font-weight:300}
+  .price-card li .s{color:var(--gold);flex:none}
+  @media(max-width:560px){.price-card{padding:36px 24px}}
+
+  /* REVIEWS */
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .rev{border:1px solid var(--line);border-radius:2px;padding:30px;background:var(--cream)}
+  .rev .stars{color:var(--gold);letter-spacing:4px;font-size:12px;margin-bottom:16px}
+  .rev p{font-family:var(--display);font-style:italic;font-size:19px;line-height:1.45;color:var(--ink);margin-bottom:18px}
+  .rev .who{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--ink-soft)}
+  .rev-note{text-align:center;color:var(--beige);font-size:12px;margin-top:24px;letter-spacing:.04em}
+  @media(max-width:800px){.rev-grid{grid-template-columns:1fr}}
+
+  /* FOOTER */
+  footer{background:var(--dark);color:var(--cream);text-align:center;padding:90px 0 38px}
+  footer .spiral{width:46px;height:46px;margin:0 auto 22px}
+  footer h2{color:var(--cream);font-size:clamp(28px,4vw,42px);margin-bottom:12px}
+  footer .sub{color:#C9BEB0;font-weight:300;margin-bottom:36px}
+  .socials{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:52px}
+  .social{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--cream);border:1px solid rgba(201,184,170,.4);padding:13px 26px;border-radius:1px;font-weight:500;font-size:14px;transition:.25s}
+  .social:hover{border-color:var(--beige);background:rgba(201,184,170,.07)}
+  .foot-base{border-top:1px solid rgba(201,184,170,.18);padding-top:26px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--beige)}
+  .foot-base .nm{font-family:var(--display);font-size:17px;color:var(--cream);letter-spacing:.5px}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="brand">
+      <svg class="spiral" viewBox="0 0 100 100" aria-hidden="true"><path data-spiral="3"></path></svg>
+      <span class="name">Алина Шведова</span>
+    </a>
+    <div class="navlinks">
+      <a href="#about">Обо мне</a>
+      <a href="#method">Метод</a>
+      <a href="#audience">Кому подходит</a>
+      <a href="#pricing">Стоимость</a>
+      <a href="#book" class="nav-cta">Записаться</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Вселенская терапия</span>
+        <h1>Понять, <em>почему именно у вас</em> — и изменить это</h1>
+        <p class="lead">Глубокая работа с причиной, а не с симптомом. Разбираемся, почему ситуации повторяются и что стоит за этим на самом деле — и возвращаем вам опору и выбор.</p>
+        <div class="hero-cta">
+          <a href="#book" class="btn btn-primary">Записаться на консультацию</a>
+          <a href="#method" class="btn btn-line">Узнать о методе</a>
+        </div>
+      </div>
+      <div class="hero-mark">
+        <svg class="spiral hero-spiral" viewBox="0 0 100 100" aria-hidden="true"><path data-spiral="3"></path></svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="wrap">
+    <span>Сертифицированный терапевт</span>
+    <span>Метод «Вселенская терапия»</span>
+    <span>Онлайн и офлайн</span>
+    <span>Результат за 1–5 сессий</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="grid reveal">
+      <div class="portrait">фото<svg class="spiral" viewBox="0 0 100 100" aria-hidden="true"><path data-spiral="3"></path></svg></div>
+      <div>
+        <span class="eyebrow">Обо мне</span>
+        <p class="big" style="margin-top:18px">Меня зовут Алина Шведова. Я помогаю увидеть причину там, где остались одни вопросы.</p>
+        <p>[Здесь — ваш рассказ: путь, образование и сертификация, что привело вас к этой работе. Несколько честных, глубоких фраз о вашем взгляде на человека и изменения.]</p>
+        <p>Ко мне приходят, когда логика уже не помогает, а ситуация повторяется. Я не даю готовых ответов — я помогаю найти причину и опору, которые были рядом всё это время.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="method on-dark" id="method">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Метод</span>
+      <h2>Что такое <em>Вселенская терапия</em></h2>
+      <p class="intro">Вселенская терапия — это структурный метод с чёткой схемой работы. Вместо многолетних «раскопок» и бесконечных историй мы сразу ищем причину: почему это происходит именно с вами и что за ней стоит на самом деле. Широкий инструментарий — подход подбирается под каждого человека и его запрос.</p>
+    </div>
+    <div class="cards">
+      <div class="mcard reveal"><div class="n">01</div><h3>Сразу в суть</h3><p>Не тратим время на длинные истории. Ищем, что стоит за ситуацией на самом деле — быстро и точно, без лишних «раскопок».</p></div>
+      <div class="mcard reveal"><div class="n">02</div><h3>Системная работа</h3><p>Чёткая схема для любого запроса: отношения, самооценка, тело, реализация, семейные сценарии. Широкий инструментарий — подбирается индивидуально.</p></div>
+      <div class="mcard reveal"><div class="n">03</div><h3>Высокая скорость</h3><p>Сложные жизненные вопросы решаются за 1–5 сессий — вместо месяцев и лет терапии. Вы уходите с ясностью и конкретным результатом.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="audience" id="audience">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Кому подходит</span>
+      <h2>С чем приходят ко мне</h2>
+    </div>
+    <div class="aud-grid">
+      <div class="aud reveal"><div class="num">01</div><h3>Активной женщине в тупике</h3><p>Есть всё, но ощущение, что застряли и ходите по кругу — без понимания, почему.</p></div>
+      <div class="aud reveal"><div class="num">02</div><h3>В кризисе перехода</h3><p>Развод, переезд, новая роль или этап — почва ушла из-под ног и нужна новая опора.</p></div>
+      <div class="aud reveal"><div class="num">03</div><h3>Ищущему и осознанному</h3><p>Вы уже многое прошли и хотите идти глубже — к сути, а не к очередной технике.</p></div>
+      <div class="aud reveal"><div class="num">04</div><h3>Предпринимателю и топ-менеджеру</h3><p>Внешние результаты есть, а внутреннего ресурса, ясности и тыла — не хватает.</p></div>
+      <div class="aud reveal"><div class="num">05</div><h3>Женщине в отношениях</h3><p>Повторяются сценарии, рядом не те люди или не складывается близость, которой хочется.</p></div>
+      <div class="aud reveal" style="background:var(--cream-soft);display:flex;flex-direction:column;justify-content:center"><p style="font-family:var(--display);font-style:italic;font-size:21px;color:var(--ink)">Узнали себя хотя бы в одном? Значит, нам есть с чем работать.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="book">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Запись</span>
+      <h2>Выберите удобное время</h2>
+    </div>
+    <div class="book-grid reveal">
+      <div class="book-note">
+        <span class="badge">Свободно / занято</span>
+        <p>Календарь показывает реальную картину: открытые слоты доступны для записи, занятые видны как «Занято». Выбираете время — приходит подтверждение и напоминание.</p>
+        <p style="margin-top:14px;color:var(--beige);font-size:14px">Сессия 90–120 минут · онлайн или офлайн · перенос не позднее чем за 24 часа.</p>
+      </div>
+      <div class="cal" aria-label="Пример выбора времени">
+        <div class="cal-head"><span class="m">Июнь</span><span class="arrows">‹ неделя ›</span></div>
+        <div class="slots">
+          <div class="slot busy">Занято</div>
+          <div class="slot free">10:00</div>
+          <div class="slot free">12:00</div>
+          <div class="slot busy">Занято</div>
+          <div class="slot free">14:00</div>
+          <div class="slot busy">Занято</div>
+          <div class="slot free">16:00</div>
+          <div class="slot free">18:30</div>
+        </div>
+        <a href="#" class="btn btn-primary">Записаться</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing on-dark" id="pricing">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Стоимость</span>
+      <h2>Что входит в консультацию</h2>
+    </div>
+    <div class="price-card reveal">
+      <div class="ttl">Индивидуальная сессия</div>
+      <div class="meta">90–120 минут · онлайн или офлайн</div>
+      <div class="amount">Цена по запросу</div>
+      <ul>
+        <li><span class="s">✦</span> Глубокий разбор запроса и работа с причиной</li>
+        <li><span class="s">✦</span> Краткое резюме встречи в личном кабинете</li>
+        <li><span class="s">✦</span> Домашние практики между сессиями</li>
+        <li><span class="s">✦</span> Поддержка по записи и напоминания</li>
+      </ul>
+      <a href="#book" class="btn btn-cream">Записаться</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Отзывы</span>
+      <h2>Что говорят клиенты</h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>«Впервые поняла, почему один и тот же сценарий повторялся годами. После сессии будто выдохнула».</p><div class="who">Мария, 34</div></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>«Бережно и точно. Без давления, но с глубиной, которой не хватало в других подходах».</p><div class="who">Ольга, 41</div></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>«Алина помогла увидеть причину там, где я искала годами. Результат — буквально за несколько встреч».</p><div class="who">Дарья, 29</div></div>
+    </div>
+    <p class="rev-note">[Отзывы — заглушки. Реальные будут подтягиваться из формы обратной связи.]</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="wrap">
+    <svg class="spiral" viewBox="0 0 100 100" aria-hidden="true"><path data-spiral="3"></path></svg>
+    <span class="eyebrow" style="color:var(--beige)">Связаться</span>
+    <h2 style="margin-top:14px">Останьтесь на связи</h2>
+    <p class="sub">Вопросы, запись и анонсы — в моих социальных сетях.</p>
+    <div class="socials">
+      <a href="#" class="social">Telegram</a>
+      <a href="#" class="social">Instagram</a>
+    </div>
+    <div class="foot-base">
+      <span class="nm">Алина Шведова</span>
+      <span>© 2026 · Вселенская терапия</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // golden (Fibonacci) spiral generator
+  function spiralPath(turns, cx, cy, fit){
+    var b=Math.log(1.618)/(Math.PI/2);
+    var thetaMax=turns*2*Math.PI;
+    var steps=Math.ceil(turns*70);
+    var pts=[], rMax=Math.exp(b*thetaMax);
+    var scale=fit/rMax;
+    for(var i=0;i<=steps;i++){
+      var th=thetaMax*i/steps;
+      var r=Math.exp(b*th)*scale;
+      var x=cx+Math.cos(th)*r;
+      var y=cy+Math.sin(th)*r;
+      pts.push((i===0?'M':'L')+x.toFixed(2)+' '+y.toFixed(2));
+    }
+    return pts.join(' ');
+  }
+  document.querySelectorAll('[data-spiral]').forEach(function(p){
+    var t=parseFloat(p.getAttribute('data-spiral'))||3;
+    p.setAttribute('d', spiralPath(t,50,50,45));
+  });
+
+  // hero spiral draw-in
+  (function(){
+    var hp=document.querySelector('.hero-spiral path');
+    if(!hp)return;
+    var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    if(reduce)return;
+    try{
+      var len=hp.getTotalLength();
+      hp.style.strokeDasharray=len;
+      hp.style.strokeDashoffset=len;
+      hp.style.transition='stroke-dashoffset 2.4s cubic-bezier(.4,0,.2,1)';
+      requestAnimationFrame(function(){requestAnimationFrame(function(){hp.style.strokeDashoffset=0;});});
+    }catch(e){}
+  })();
+
+  // scroll reveal
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>
+</body>
+</html>
