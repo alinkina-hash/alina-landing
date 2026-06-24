@@ -2,378 +2,337 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Алина — Вселенская терапия</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --dark:#2C2825;
-    --dark-2:#343230;
-    --cream:#FFFFFF;
-    --beige:#C0B4A4;
-    --line:#E2DED8;
-    --gold:#B07050;
-    --ink:#2C2825;
-    --ink-soft:#78756F;
-    --cream-soft:#F5F3EF;
-    --display:'Raleway',sans-serif;
-    --body:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    --maxw:1140px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
-  h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.12}
-  .eyebrow{font-family:var(--body);font-weight:600;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
-  a{color:inherit}
-  .btn{display:inline-block;font-family:var(--body);font-weight:500;font-size:14px;letter-spacing:.04em;text-decoration:none;cursor:pointer;padding:15px 30px;border-radius:1px;border:1px solid transparent;transition:all .28s ease}
-  .btn-primary{background:var(--dark);color:var(--cream)}
-  .btn-primary:hover{background:#171411;transform:translateY(-2px)}
-  .btn-line{background:transparent;color:var(--ink);border-color:var(--beige)}
-  .btn-line:hover{border-color:var(--dark);transform:translateY(-2px)}
-  .btn-cream{background:var(--cream);color:var(--dark)}
-  .btn-cream:hover{background:#fff;transform:translateY(-2px)}
-  .on-dark .btn-line{color:var(--cream);border-color:rgba(201,184,170,.45)}
-  .on-dark .btn-line:hover{border-color:var(--beige)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;-webkit-font-smoothing:antialiased;color:#2C2825}
 
-  /* spiral mark */
-  .spiral{display:block}
-  .spiral path{fill:none;stroke:var(--gold);stroke-width:2;stroke-linecap:round}
+:root{
+  --terra:#C4714A;
+  --olive:#3D4A36;
+  --sandy:#C8BBA8;
+  --sedsey:#4A6068;
+  --ofwhite:#F2F0EB;
+  --offwhite:#E8E2D6;
+  --dark:#2C2825;
+  --ink-soft:#78756F;
+}
 
-  /* NAV */
-  nav{position:fixed;top:0;left:0;right:0;z-index:30;background:var(--cream);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 32px}
-  .brand{display:flex;align-items:center;gap:14px;text-decoration:none}
-  .brand .spiral{width:38px;height:38px}
-  nav .spiral path{stroke:var(--dark)}
-  .brand-text{display:flex;flex-direction:column}
-  .brand .name{font-family:var(--display);font-size:20px;font-weight:400;letter-spacing:.3px;color:var(--ink);line-height:1.2}
-  .brand .tagline{font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-top:4px}
-  .navlinks{display:flex;gap:26px;align-items:center}
-  .navlinks a{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--ink-soft);transition:color .2s}
-  .navlinks a:hover{color:var(--ink)}
-  .nav-sep{width:1px;height:22px;background:var(--line)}
-  .navlinks .nav-cta{color:var(--ink);border:1px solid var(--ink);padding:10px 22px;border-radius:2px;letter-spacing:.14em}
-  .navlinks .nav-cta:hover{background:var(--ink);color:var(--cream)}
-  @media(max-width:780px){.navlinks a:not(.nav-cta){display:none}.nav-sep{display:none}}
+/* SPIRAL */
+.spiral{display:block}
+.spiral path{fill:none;stroke:var(--sandy);stroke-width:2.5;stroke-linecap:round}
 
-  /* HERO */
-  .hero{position:relative;padding:172px 0 96px;overflow:hidden;padding-top:172px}
-  .hero .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
-  .hero h1{font-size:clamp(40px,6vw,74px);margin:24px 0 26px;letter-spacing:.3px}
-  .hero h1 em{font-style:italic;color:var(--gold)}
-  .hero .lead{font-size:clamp(16px,1.7vw,18px);font-weight:300;color:var(--ink-soft);max-width:520px;margin-bottom:36px}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-  .hero-mark{display:flex;justify-content:center;align-items:center}
-  .hero-mark .spiral{width:min(320px,80%);height:auto}
-  .hero-mark .spiral path{stroke-width:1.6}
-  @media(max-width:820px){.hero .grid{grid-template-columns:1fr}.hero-mark{display:none}}
+/* NAV */
+nav{background:var(--olive);padding:16px 48px;display:flex;align-items:center;justify-content:space-between;position:fixed;top:0;left:0;right:0;z-index:30}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-text{display:flex;flex-direction:column}
+.brand .name{font-family:'Raleway',sans-serif;font-size:20px;font-weight:400;color:rgba(255,255,255,.65);line-height:1.2;letter-spacing:.3px}
+.brand .tagline{font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--sandy);margin-top:4px}
+.navlinks{display:flex;gap:26px;align-items:center}
+.navlinks a{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,.65);transition:color .2s}
+.navlinks a:hover{color:#fff}
+.nav-sep{width:1px;height:22px;background:rgba(255,255,255,.2)}
+.navlinks .nav-cta{border:1px solid rgba(255,255,255,.45);padding:10px 22px;color:#fff;border-radius:2px}
+.navlinks .nav-cta:hover{background:rgba(255,255,255,.1);border-color:#fff}
+@media(max-width:780px){.navlinks a:not(.nav-cta){display:none}.nav-sep{display:none}}
 
-  /* TRUST STRIP */
-  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--cream)}
-  .trust .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 30px;padding:22px 32px}
-  .trust span{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:30px}
-  .trust span::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--beige)}
-  .trust span:last-child::after{display:none}
+/* HERO — text left (ofwhite), photo right */
+.hero{display:grid;grid-template-columns:.95fr 1.05fr;min-height:calc(100vh - 58px);margin-top:58px}
+.hero-left{background:var(--ofwhite);padding:80px 60px;display:flex;flex-direction:column;justify-content:center}
+.hero-left .eyebrow{font-size:10px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--terra);margin-bottom:24px}
+.hero-left h1{font-family:'Raleway',sans-serif;font-size:clamp(34px,3.6vw,50px);font-weight:300;line-height:1.1;color:var(--dark);margin-bottom:24px}
+.hero-left h1 em{font-style:italic;color:var(--terra)}
+.hero-left .lead{font-size:15px;font-weight:300;color:var(--ink-soft);line-height:1.75;margin-bottom:36px;max-width:420px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-dark{background:var(--dark);color:#fff;padding:14px 28px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:500;letter-spacing:.04em;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:.2s}
+.btn-dark:hover{background:#171411}
+.btn-outline{background:transparent;color:var(--dark);padding:14px 28px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:500;letter-spacing:.04em;border:1px solid #C0B4A4;cursor:pointer;text-decoration:none;display:inline-block;transition:.2s}
+.btn-outline:hover{border-color:var(--dark)}
+.hero-right{overflow:hidden}
+.hero-right img{width:100%;height:100%;object-fit:cover;object-position:center 8%}
+@media(max-width:820px){.hero{grid-template-columns:1fr;min-height:auto;margin-top:56px}.hero-right{height:60vw}}
 
-  /* SECTIONS */
-  section{padding:104px 0}
-  .sec-head{max-width:660px;margin-bottom:56px}
-  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
-  .sec-head h2{font-size:clamp(30px,4.4vw,50px);margin-top:16px;letter-spacing:.3px}
-  .sec-head h2 em{font-style:italic;color:var(--gold)}
+/* TRUST */
+.trust{background:var(--sandy);padding:18px 48px;display:flex;justify-content:center;gap:36px;flex-wrap:wrap}
+.trust span{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--dark);opacity:.75}
+.trust span.dot{opacity:.4}
 
-  /* ABOUT */
-  .about .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
-  .portrait{aspect-ratio:4/5;border-radius:2px;overflow:hidden;position:relative}
-  .portrait img{width:100%;height:100%;object-fit:cover;object-position:center 10%}
-  .portrait .spiral{position:absolute;width:54px;height:54px;bottom:18px;right:18px;opacity:.45}
-  .about p{margin-bottom:18px;color:var(--ink-soft);font-weight:300}
-  .about .big{font-family:var(--display);font-size:clamp(22px,2.6vw,30px);line-height:1.35;color:var(--ink);font-weight:500;margin-bottom:24px}
-  @media(max-width:800px){.about .grid{grid-template-columns:1fr;gap:34px}}
+/* ABOUT */
+.about{background:var(--ofwhite);padding:90px 48px}
+.about-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:60px;align-items:flex-start}
+.about-inner .eyebrow{font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);margin-bottom:16px}
+.about-inner h2{font-family:'Raleway',sans-serif;font-size:clamp(26px,3vw,36px);font-weight:300;color:var(--dark);line-height:1.25;margin-bottom:28px}
+.about-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.about-cols .big{font-family:'Raleway',sans-serif;font-size:18px;font-weight:300;color:var(--dark);line-height:1.6}
+.about-cols p{font-size:15px;font-weight:300;color:var(--ink-soft);line-height:1.75}
+.about-photo{flex-shrink:0;width:300px}
+.about-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 8%;display:block}
+@media(max-width:860px){.about-inner{grid-template-columns:1fr}.about-photo{width:100%;max-width:320px}.about-cols{grid-template-columns:1fr}}
 
-  /* METHOD (dark) */
-  .method{background:var(--dark);color:var(--cream)}
-  .method .eyebrow{color:var(--beige)}
-  .method h2{color:var(--cream)}
-  .method .intro{color:#D9CFC2;font-weight:300;max-width:620px;margin-top:20px;font-size:17px}
-  .method .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:60px}
-  .mcard{border-top:1px solid rgba(201,184,170,.3);padding-top:26px}
-  .mcard .n{font-family:var(--display);font-size:34px;color:var(--gold);line-height:1}
-  .mcard h3{font-size:24px;color:var(--cream);margin:16px 0 12px;font-weight:500}
-  .mcard p{font-size:15px;color:#C9BEB0;font-weight:300}
-  @media(max-width:800px){.method .cards{grid-template-columns:1fr;gap:32px}}
+/* METHOD */
+.method{background:var(--olive);padding:90px 48px}
+.method-head{max-width:1100px;margin:0 auto 40px}
+.method-head .eyebrow{font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--sandy);margin-bottom:16px}
+.method-head h2{font-family:'Raleway',sans-serif;font-size:clamp(26px,3vw,38px);font-weight:300;color:#fff;margin-bottom:16px}
+.method-head h2 em{font-style:italic;color:var(--sandy)}
+.method-head .intro{font-size:16px;font-weight:300;color:rgba(255,255,255,.7);max-width:600px;margin-bottom:18px;line-height:1.7}
+.method-link{font-size:13px;font-weight:500;color:var(--sandy);text-decoration:none;letter-spacing:.04em;display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid rgba(200,187,168,.45);padding-bottom:2px;transition:.2s}
+.method-link:hover{color:#fff;border-color:rgba(255,255,255,.7)}
+.cards{max-width:1100px;margin:40px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{border-top:1px solid rgba(200,187,168,.3);padding-top:24px}
+.card .n{font-family:'Raleway',sans-serif;font-size:32px;font-weight:300;color:var(--terra)}
+.card h3{font-size:19px;font-weight:400;color:#fff;margin:14px 0 10px;font-family:'Raleway',sans-serif}
+.card p{font-size:14px;font-weight:300;color:rgba(255,255,255,.6)}
+@media(max-width:800px){.cards{grid-template-columns:1fr;gap:24px}}
 
-  /* AUDIENCE */
-  .audience .aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .aud{background:var(--cream);border:1px solid var(--line);border-radius:2px;padding:32px 30px;transition:all .28s ease}
-  .aud:hover{border-color:var(--beige);transform:translateY(-3px)}
-  .aud .num{font-family:var(--display);font-size:15px;color:var(--gold);letter-spacing:.1em}
-  .aud h3{font-size:23px;margin:12px 0 12px;font-weight:500;line-height:1.25}
-  .aud p{font-size:15px;color:var(--ink-soft);font-weight:300}
-  @media(max-width:860px){.audience .aud-grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:600px){.audience .aud-grid{grid-template-columns:1fr}}
+/* AUDIENCE */
+.audience{background:var(--sandy);padding:90px 48px}
+.audience-head{max-width:1100px;margin:0 auto 40px}
+.audience-head .eyebrow{font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--olive);margin-bottom:16px}
+.audience-head h2{font-family:'Raleway',sans-serif;font-size:clamp(26px,3vw,38px);font-weight:300;color:var(--dark)}
+.aud-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.aud{background:rgba(255,255,255,.5);border:1px solid rgba(62,74,54,.15);padding:28px;transition:.2s}
+.aud:hover{background:rgba(255,255,255,.75);transform:translateY(-2px)}
+.aud .num{font-family:'Raleway',sans-serif;font-size:13px;color:var(--olive);letter-spacing:.1em}
+.aud h3{font-size:18px;font-weight:400;font-family:'Raleway',sans-serif;color:var(--dark);margin:10px 0 10px}
+.aud p{font-size:14px;font-weight:300;color:var(--ink-soft)}
+@media(max-width:860px){.aud-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.aud-grid{grid-template-columns:1fr}}
 
-  /* BOOKING */
-  .booking{background:var(--cream-soft)}
-  .book-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
-  .book-note .badge{display:inline-block;border:1px solid var(--beige);color:var(--ink-soft);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border-radius:1px;margin-bottom:20px}
-  .book-note p{color:var(--ink-soft);font-weight:300}
-  .cal{background:var(--cream);border:1px solid var(--line);border-radius:3px;padding:24px}
-  .cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-  .cal-head .m{font-family:var(--display);font-size:21px;font-weight:600}
-  .cal-head .arrows{color:var(--beige);font-size:12px;letter-spacing:.12em}
-  .slots{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-  .slot{text-align:center;font-size:13px;font-weight:500;padding:12px 0;border-radius:1px;border:1px solid var(--line)}
-  .slot.free{background:var(--cream);cursor:pointer;transition:.2s}
-  .slot.free:hover{background:var(--dark);color:var(--cream);border-color:var(--dark)}
-  .slot.busy{background:transparent;color:var(--beige);border-style:dashed}
-  .cal .btn{margin-top:18px;display:block;text-align:center}
-  @media(max-width:800px){.book-grid{grid-template-columns:1fr;gap:32px}}
+/* REVIEWS */
+.reviews{background:var(--sedsey);padding:90px 48px}
+.reviews-head{max-width:1100px;margin:0 auto 40px}
+.reviews-head .eyebrow{font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:16px}
+.reviews-head h2{font-family:'Raleway',sans-serif;font-size:clamp(26px,3vw,38px);font-weight:300;color:#fff}
+.rev-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:rgba(255,255,255,.1);padding:28px}
+.rev .stars{color:var(--terra);font-size:12px;letter-spacing:3px;margin-bottom:14px}
+.rev p{font-family:'Raleway',sans-serif;font-style:italic;font-size:17px;line-height:1.5;color:#fff;margin-bottom:14px;font-weight:300}
+.rev .who{font-size:12px;font-weight:500;color:rgba(255,255,255,.55)}
+.rev-tag{display:inline-block;margin-left:8px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra)}
+@media(max-width:860px){.rev-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.rev-grid{grid-template-columns:1fr}}
 
-  /* PRICING (dark) */
-  .pricing{background:var(--dark);color:var(--cream)}
-  .pricing .eyebrow{color:var(--beige)}
-  .pricing h2{color:var(--cream)}
-  .price-card{max-width:580px;margin:0 auto;border:1px solid rgba(201,184,170,.3);border-radius:3px;padding:48px 48px 42px;text-align:center;background:var(--dark-2)}
-  .price-card .ttl{font-family:var(--display);font-size:28px;color:var(--cream);font-weight:500}
-  .price-card .meta{color:var(--beige);font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin:12px 0 4px}
-  .price-card .amount{font-family:var(--display);font-size:34px;color:var(--gold);margin-bottom:26px}
-  .price-card ul{list-style:none;text-align:left;margin:0 auto 32px;max-width:400px;display:grid;gap:14px}
-  .price-card li{display:flex;gap:14px;color:#D9CFC2;font-size:15px;font-weight:300}
-  .price-card li .s{color:var(--gold);flex:none}
-  @media(max-width:560px){.price-card{padding:36px 24px}}
+/* BOOKING */
+.booking{background:var(--ofwhite);padding:90px 48px}
+.booking-inner{max-width:1100px;margin:0 auto}
+.booking .eyebrow{font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);margin-bottom:16px}
+.booking h2{font-family:'Raleway',sans-serif;font-size:clamp(26px,3vw,38px);font-weight:300;color:var(--dark);margin-bottom:12px}
+.booking .lead{font-size:15px;font-weight:300;color:var(--ink-soft);margin-bottom:32px}
+.dur-tabs{display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap}
+.dur-tab{background:transparent;border:1px solid rgba(44,40,37,.2);color:var(--ink-soft);padding:9px 22px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;letter-spacing:.08em;cursor:pointer;transition:.2s;border-radius:1px}
+.dur-tab:hover{border-color:var(--olive);color:var(--olive)}
+.dur-tab.active{background:var(--olive);color:#fff;border-color:var(--olive)}
+#cal-inline{min-height:550px;border-radius:2px;overflow:hidden}
 
-  /* REVIEWS */
-  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .rev{border:1px solid var(--line);border-radius:2px;padding:30px;background:var(--cream)}
-  .rev .stars{color:var(--gold);letter-spacing:4px;font-size:12px;margin-bottom:16px}
-  .rev p{font-family:var(--display);font-style:italic;font-size:19px;line-height:1.45;color:var(--ink);margin-bottom:18px}
-  .rev .who{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--ink-soft)}
-  .rev-tag{display:inline-block;margin-left:8px;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);opacity:.8}
-  @media(max-width:800px){.rev-grid{grid-template-columns:1fr}}
+/* FOOTER */
+footer{background:var(--olive);padding:48px;text-align:center}
+footer a.social{display:inline-block;border:1px solid rgba(255,255,255,.4);color:#fff;padding:14px 36px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;margin-bottom:32px;transition:.2s}
+footer a.social:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.foot-base{border-top:1px solid rgba(255,255,255,.15);padding-top:24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:rgba(255,255,255,.5)}
+.foot-base .nm{font-family:'Raleway',sans-serif;font-size:17px;color:#fff;letter-spacing:.5px}
 
-  /* FOOTER */
-  footer{background:var(--dark);color:var(--cream);text-align:center;padding:90px 0 38px}
-  footer .spiral{width:46px;height:46px;margin:0 auto 22px}
-  footer h2{color:var(--cream);font-size:clamp(28px,4vw,42px);margin-bottom:12px}
-  footer .sub{color:#C9BEB0;font-weight:300;margin-bottom:36px}
-  .socials{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:52px}
-  .social{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--cream);border:1px solid rgba(201,184,170,.4);padding:13px 26px;border-radius:1px;font-weight:500;font-size:14px;transition:.25s}
-  .social:hover{border-color:var(--beige);background:rgba(201,184,170,.07)}
-  .foot-base{border-top:1px solid rgba(201,184,170,.18);padding-top:26px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--beige)}
-  .foot-base .nm{font-family:var(--display);font-size:17px;color:var(--cream);letter-spacing:.5px}
-
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
-  .reveal.in{opacity:1;transform:none}
-  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="wrap">
-    <a href="#" class="brand">
-      <svg class="spiral" viewBox="0 0 100 100" aria-hidden="true"><path data-spiral="3"></path></svg>
-      <div class="brand-text">
-        <span class="name">Алина</span>
-        <span class="tagline">психолог · терапевт</span>
-      </div>
-    </a>
-    <div class="navlinks">
-      <a href="#about">Обо мне</a>
-      <a href="#method">Метод</a>
-      <a href="#audience">Кому подходит</a>
-      <a href="#reviews">Отзывы</a>
-      <div class="nav-sep"></div>
-      <a href="#book" class="nav-cta">Записаться</a>
+  <a href="#" class="brand">
+    <svg class="spiral" width="36" height="36" viewBox="0 0 100 100" aria-hidden="true"><path data-spiral="3"></path></svg>
+    <div class="brand-text">
+      <span class="name">Алина</span>
+      <span class="tagline">психолог · терапевт</span>
     </div>
+  </a>
+  <div class="navlinks">
+    <a href="#about">Обо мне</a>
+    <a href="#method">Метод</a>
+    <a href="#audience">Кому подходит</a>
+    <a href="#reviews">Отзывы</a>
+    <div class="nav-sep"></div>
+    <a href="#book" class="nav-cta">Записаться</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<header class="hero">
-  <div class="wrap">
-    <div class="grid">
-      <div class="hero-copy">
-        <span class="eyebrow">Вселенская терапия</span>
-        <h1>Понять, <em>почему именно у вас</em> — и изменить это</h1>
-        <p class="lead">Глубокая работа с причиной, а не с симптомом. Разбираемся, почему ситуации повторяются и что стоит за этим на самом деле — и возвращаем вам опору и выбор.</p>
-        <div class="hero-cta">
-          <a href="#book" class="btn btn-primary">Записаться на консультацию</a>
-          <a href="#method" class="btn btn-line">Узнать о методе</a>
-        </div>
-      </div>
-      <div class="hero-mark">
-        <svg class="spiral hero-spiral" viewBox="0 0 100 100" aria-hidden="true"><path data-spiral="3"></path></svg>
-      </div>
+<div class="hero">
+  <div class="hero-left">
+    <span class="eyebrow">Вселенская терапия</span>
+    <h1>Понять, <em>почему именно у вас</em> — и изменить это</h1>
+    <p class="lead">Глубокая работа с причиной, а не симптомом. Разбираемся, почему ситуации повторяются — и возвращаем вам опору и выбор.</p>
+    <div class="btns">
+      <a href="#book" class="btn-dark">Записаться</a>
+      <a href="#method" class="btn-outline">О методе →</a>
     </div>
   </div>
-</header>
+  <div class="hero-right">
+    <img src="images/alina.jpg" alt="Алина — психолог-терапевт">
+  </div>
+</div>
 
 <!-- TRUST -->
 <div class="trust">
-  <div class="wrap">
-    <span>Сертифицированный терапевт</span>
-    <span>Метод «Вселенская терапия»</span>
-    <span>Онлайн и офлайн</span>
-    <span>Результат за 1–5 сессий</span>
-  </div>
+  <span>Сертифицированный терапевт</span>
+  <span class="dot">·</span>
+  <span>Вселенская терапия</span>
+  <span class="dot">·</span>
+  <span>Онлайн и офлайн</span>
+  <span class="dot">·</span>
+  <span>Результат за 1–5 сессий</span>
 </div>
 
 <!-- ABOUT -->
 <section class="about" id="about">
-  <div class="wrap">
-    <div class="grid reveal">
-      <div class="portrait">
-        <img src="images/alina.jpg" alt="Алина — психолог-терапевт">
-        <svg class="spiral" viewBox="0 0 100 100" aria-hidden="true"><path data-spiral="3"></path></svg>
+  <div class="about-inner reveal">
+    <div>
+      <div class="eyebrow">Обо мне</div>
+      <h2>Меня зовут Алина. Помогаю увидеть причину там, где остались одни вопросы.</h2>
+      <div class="about-cols">
+        <div>
+          <p class="big">[Здесь — ваш рассказ: путь, образование и сертификация, что привело вас к этой работе.]</p>
+        </div>
+        <div>
+          <p>Ко мне приходят, когда логика уже не помогает, а ситуация повторяется. Я не даю готовых ответов — я помогаю найти причину и опору, которые были рядом всё это время.</p>
+        </div>
       </div>
-      <div>
-        <span class="eyebrow">Обо мне</span>
-        <p class="big" style="margin-top:18px">Меня зовут Алина. Я помогаю увидеть причину там, где остались одни вопросы.</p>
-        <p>[Здесь — ваш рассказ: путь, образование и сертификация, что привело вас к этой работе. Несколько честных, глубоких фраз о вашем взгляде на человека и изменения.]</p>
-        <p>Ко мне приходят, когда логика уже не помогает, а ситуация повторяется. Я не даю готовых ответов — я помогаю найти причину и опору, которые были рядом всё это время.</p>
-      </div>
+    </div>
+    <div class="about-photo">
+      <img src="images/alina2.jpg" alt="Алина — психолог-терапевт">
     </div>
   </div>
 </section>
 
 <!-- METHOD -->
-<section class="method on-dark" id="method">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Метод</span>
-      <h2>Что такое <em>Вселенская терапия</em></h2>
-      <p class="intro">Вселенская терапия — это структурный метод с чёткой схемой работы. Вместо многолетних «раскопок» и бесконечных историй мы сразу ищем причину: почему это происходит именно с вами и что за ней стоит на самом деле. Широкий инструментарий — подход подбирается под каждого человека и его запрос.</p>
-    </div>
-    <div class="cards">
-      <div class="mcard reveal"><div class="n">01</div><h3>Сразу в суть</h3><p>Не тратим время на длинные истории. Ищем, что стоит за ситуацией на самом деле — быстро и точно, без лишних «раскопок».</p></div>
-      <div class="mcard reveal"><div class="n">02</div><h3>Системная работа</h3><p>Чёткая схема для любого запроса: отношения, самооценка, тело, реализация, семейные сценарии. Широкий инструментарий — подбирается индивидуально.</p></div>
-      <div class="mcard reveal"><div class="n">03</div><h3>Высокая скорость</h3><p>Сложные жизненные вопросы решаются за 1–5 сессий — вместо месяцев и лет терапии. Вы уходите с ясностью и конкретным результатом.</p></div>
-    </div>
+<section class="method" id="method">
+  <div class="method-head reveal">
+    <div class="eyebrow">Метод</div>
+    <h2>Что такое <em>Вселенская терапия</em></h2>
+    <p class="intro">Структурный метод с чёткой схемой работы. Вместо многолетних раскопок — сразу ищем причину: почему это происходит именно с вами и что за ней стоит на самом деле.</p>
+    <a href="https://leonidtalpis.com/vselenka" target="_blank" rel="noopener" class="method-link">Подробнее о методе на сайте автора →</a>
+  </div>
+  <div class="cards">
+    <div class="card reveal"><div class="n">01</div><h3>Сразу в суть</h3><p>Не тратим время на долгие истории. Ищем, что стоит за ситуацией — быстро и точно, без лишних раскопок.</p></div>
+    <div class="card reveal"><div class="n">02</div><h3>Системная работа</h3><p>Чёткая схема для любого запроса: отношения, самооценка, реализация, семейные сценарии. Инструментарий подбирается индивидуально.</p></div>
+    <div class="card reveal"><div class="n">03</div><h3>Высокая скорость</h3><p>Сложные жизненные вопросы решаются за 1–5 сессий — вместо месяцев и лет терапии. Уходите с ясностью и результатом.</p></div>
   </div>
 </section>
 
 <!-- AUDIENCE -->
 <section class="audience" id="audience">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">Кому подходит</span>
-      <h2>С чем приходят ко мне</h2>
-    </div>
-    <div class="aud-grid">
-      <div class="aud reveal"><div class="num">01</div><h3>Активной женщине в тупике</h3><p>Есть всё, но ощущение, что застряли и ходите по кругу — без понимания, почему.</p></div>
-      <div class="aud reveal"><div class="num">02</div><h3>В кризисе перехода</h3><p>Развод, переезд, новая роль или этап — почва ушла из-под ног и нужна новая опора.</p></div>
-      <div class="aud reveal"><div class="num">03</div><h3>Ищущему и осознанному</h3><p>Вы уже многое прошли и хотите идти глубже — к сути, а не к очередной технике.</p></div>
-      <div class="aud reveal"><div class="num">04</div><h3>Предпринимателю и топ-менеджеру</h3><p>Внешние результаты есть, а внутреннего ресурса, ясности и тыла — не хватает.</p></div>
-      <div class="aud reveal"><div class="num">05</div><h3>Женщине в отношениях</h3><p>Повторяются сценарии, рядом не те люди или не складывается близость, которой хочется.</p></div>
-      <div class="aud reveal" style="background:var(--cream-soft);display:flex;flex-direction:column;justify-content:center"><p style="font-family:var(--display);font-style:italic;font-size:21px;color:var(--ink)">Узнали себя хотя бы в одном? Значит, нам есть с чем работать.</p></div>
+  <div class="audience-head reveal">
+    <div class="eyebrow">Кому подходит</div>
+    <h2>Для кого подойдет метод</h2>
+  </div>
+  <div class="aud-grid">
+    <div class="aud reveal"><div class="num">01</div><h3>Активной женщине в тупике</h3><p>Есть всё, но ощущение, что застряли и ходите по кругу — без понимания, почему.</p></div>
+    <div class="aud reveal"><div class="num">02</div><h3>В кризисе перехода</h3><p>Развод, переезд, новая роль — почва ушла из-под ног и нужна новая опора.</p></div>
+    <div class="aud reveal"><div class="num">03</div><h3>Ищущему и осознанному</h3><p>Вы уже многое прошли и хотите идти глубже — к сути, а не к очередной технике.</p></div>
+    <div class="aud reveal"><div class="num">04</div><h3>Предпринимателю и топ-менеджеру</h3><p>Внешние результаты есть, а внутреннего ресурса и ясности — не хватает.</p></div>
+    <div class="aud reveal"><div class="num">05</div><h3>Женщине в отношениях</h3><p>Повторяются сценарии, рядом не те люди или не складывается близость, которой хочется.</p></div>
+    <div class="aud reveal" style="background:rgba(62,74,54,.12);display:flex;align-items:center;justify-content:center;border-color:transparent">
+      <p style="font-family:'Raleway',sans-serif;font-style:italic;font-size:18px;font-weight:300;color:var(--dark);text-align:center;line-height:1.5">Узнали себя хотя бы в одном? Значит, нам есть с чем работать.</p>
     </div>
   </div>
 </section>
 
 <!-- REVIEWS -->
 <section class="reviews" id="reviews">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Отзывы</span>
-      <h2>Что говорят клиенты</h2>
+  <div class="reviews-head reveal">
+    <div class="eyebrow">Отзывы</div>
+    <h2>Что говорят клиенты</h2>
+  </div>
+  <div class="rev-grid">
+    <div class="rev reveal">
+      <div class="stars">★★★★★</div>
+      <p>«Апатия трансформировалась в что-то лучшее. Чувствую себя более активно. Сильного чувства вины нет — и это прекрасно».</p>
+      <div class="who">Елена, 41 · Минск<span class="rev-tag">Апатия</span></div>
     </div>
-    <div class="rev-grid">
-      <div class="rev reveal"><div class="stars">★★★★★</div><p>«Апатия трансформировалась в что-то лучшее. Чувствую себя более активно. Сильного чувства вины нет — и это прекрасно».</p><div class="who">Елена, 41 · Минск<span class="rev-tag">Апатия</span></div></div>
-      <div class="rev reveal"><div class="stars">★★★★★</div><p>«Можно верить во Вселенскую терапию либо нет — факт остаётся: результат не заставил себя долго ждать. Мне так не хватало опоры, и я почувствовала её уже на следующий день».</p><div class="who">Юля · Минск<span class="rev-tag">Отношения</span></div></div>
-      <div class="rev reveal"><div class="stars">★★★★★</div><p>«На работе стали больше слышать и слушать. Мужчины стали воспринимать по-другому. Легче стало озвучивать чего мне хочется. И всё это — после одной сессии».</p><div class="who">Екатерина · Минск<span class="rev-tag">Проявленность</span></div></div>
-      <div class="rev reveal"><div class="stars">★★★★★</div><p>«Появилось ощущение "я есть, я ценна". Стало ок обсуждать цену за свои услуги в 1,5 раза выше прежнего барьера. И ставить свои потребности на первое место — без чувства вины».</p><div class="who">Ольга · Минск<span class="rev-tag">Самоценность</span></div></div>
-      <div class="rev reveal"><div class="stars">★★★★★</div><p>«Прикинь, мне сегодня деньги пришли. Лёгкие. Просто за консультацию. На которой я и не особо напрягалась».</p><div class="who">Ольга · Минск<span class="rev-tag">Финансы</span></div></div>
-      <div class="rev reveal"><div class="stars">★★★★★</div><p>«Мне было безопасно и комфортно. После сессии ощутила огромную радость. Обычно выделить два часа на себя — большая роскошь. Но вчера я почувствовала время по-другому».</p><div class="who">Диана · Польша<span class="rev-tag">Здоровье</span></div></div>
+    <div class="rev reveal">
+      <div class="stars">★★★★★</div>
+      <p>«Результат не заставил себя долго ждать. Мне так не хватало опоры — я почувствовала её уже на следующий день после сеанса».</p>
+      <div class="who">Юля · Минск<span class="rev-tag">Отношения</span></div>
+    </div>
+    <div class="rev reveal">
+      <div class="stars">★★★★★</div>
+      <p>«На работе стали больше слышать. Мужчины стали воспринимать по-другому. Легче стало озвучивать, чего хочется. И всё это — после одной сессии».</p>
+      <div class="who">Екатерина · Минск<span class="rev-tag">Проявленность</span></div>
+    </div>
+    <div class="rev reveal">
+      <div class="stars">★★★★★</div>
+      <p>«Появилось ощущение "я есть, я ценна". Стало ок обсуждать цену на услуги в 1,5 раза выше прежнего барьера — без чувства вины».</p>
+      <div class="who">Ольга · Минск<span class="rev-tag">Самоценность</span></div>
+    </div>
+    <div class="rev reveal">
+      <div class="stars">★★★★★</div>
+      <p>«Состояние поменялось настолько, что тревоги ушли вообще. Я не позволяла себе дышать полной грудью. Сейчас замечаю старые паттерны — и действую по-другому».</p>
+      <div class="who">Елена · Минск<span class="rev-tag">Финансы</span></div>
+    </div>
+    <div class="rev reveal">
+      <div class="stars">★★★★★</div>
+      <p>«Мне было безопасно и комфортно. После сессии ощутила огромную радость. Обычно выделить два часа на себя — большая роскошь. Но вчера я почувствовала время по-другому».</p>
+      <div class="who">Диана · Польша<span class="rev-tag">Здоровье</span></div>
     </div>
   </div>
 </section>
 
 <!-- BOOKING -->
 <section class="booking" id="book">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Запись</span>
-      <h2>Выберите удобное время</h2>
-    </div>
-    <div class="book-grid reveal">
-      <div class="book-note">
-        <span class="badge">Свободно / занято</span>
-        <p>Календарь показывает реальную картину: открытые слоты доступны для записи, занятые видны как «Занято». Выбираете время — приходит подтверждение и напоминание.</p>
-        <p style="margin-top:14px;color:var(--beige);font-size:14px">Сессия 90–120 минут · онлайн или офлайн · перенос не позднее чем за 24 часа.</p>
-      </div>
-      <div id="cal-inline" style="min-height:550px;border-radius:3px;overflow:hidden"></div>
-    </div>
+  <div class="booking-inner">
+    <div class="eyebrow reveal">Запись</div>
+    <h2 class="reveal">Выберите удобное время</h2>
+    <p class="lead reveal">Сессия 90 минут · онлайн или офлайн · перенос не позднее чем за 24 часа.</p>
+    <div id="cal-inline"></div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer id="contact">
-  <div class="wrap">
-    <div class="socials">
-      <a href="https://t.me/a_l_i_n_k_i_n_a" class="social" target="_blank" rel="noopener">Telegram</a>
-    </div>
-    <div class="foot-base">
-      <span class="nm">Алина</span>
-      <span>© 2026 · Вселенская терапия</span>
-    </div>
+  <a href="https://t.me/a_l_i_n_k_i_n_a" class="social" target="_blank" rel="noopener">Telegram</a>
+  <div class="foot-base">
+    <span class="nm">Алина</span>
+    <span>© 2026 · Вселенская терапия</span>
   </div>
 </footer>
 
 <script>
-  // Cal.com inline embed
+  // Cal.com embed
   (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const ns=ar[1];api.q=api.q||[];typeof ns==="string"?(cal.ns[ns]=api)&&p(api,ar):p(cal,ar);return}p(cal,ar)}})(window,"https://app.cal.com/embed/embed.js","init");
   Cal("init",{origin:"https://cal.com"});
-  Cal("inline",{elementOrSelector:"#cal-inline",calLink:"alin-ka-tycv3s",layout:"month_view"});
+
+  Cal("inline",{elementOrSelector:"#cal-inline",calLink:"alin-ka-tycv3s",layout:"month_view",config:{duration:90}});
   Cal("ui",{"hideEventTypeDetails":false,"layout":"month_view"});
 </script>
+
 <script>
-  // golden (Fibonacci) spiral generator
-  function spiralPath(turns, cx, cy, fit){
+  // Fibonacci spiral generator
+  function spiralPath(turns,cx,cy,fit){
     var b=Math.log(1.618)/(Math.PI/2);
-    var thetaMax=turns*2*Math.PI;
-    var steps=Math.ceil(turns*70);
-    var pts=[], rMax=Math.exp(b*thetaMax);
-    var scale=fit/rMax;
+    var tMax=turns*2*Math.PI,steps=Math.ceil(turns*70);
+    var pts=[],rMax=Math.exp(b*tMax),scale=fit/rMax;
     for(var i=0;i<=steps;i++){
-      var th=thetaMax*i/steps;
-      var r=Math.exp(b*th)*scale;
-      var x=cx+Math.cos(th)*r;
-      var y=cy+Math.sin(th)*r;
-      pts.push((i===0?'M':'L')+x.toFixed(2)+' '+y.toFixed(2));
+      var th=tMax*i/steps,r=Math.exp(b*th)*scale;
+      pts.push((i===0?'M':'L')+(cx+Math.cos(th)*r).toFixed(2)+' '+(cy+Math.sin(th)*r).toFixed(2));
     }
     return pts.join(' ');
   }
   document.querySelectorAll('[data-spiral]').forEach(function(p){
-    var t=parseFloat(p.getAttribute('data-spiral'))||3;
-    p.setAttribute('d', spiralPath(t,50,50,45));
+    p.setAttribute('d',spiralPath(parseFloat(p.getAttribute('data-spiral'))||3,50,50,45));
   });
-
-  // hero spiral draw-in
-  (function(){
-    var hp=document.querySelector('.hero-spiral path');
-    if(!hp)return;
-    var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-    if(reduce)return;
-    try{
-      var len=hp.getTotalLength();
-      hp.style.strokeDasharray=len;
-      hp.style.strokeDashoffset=len;
-      hp.style.transition='stroke-dashoffset 2.4s cubic-bezier(.4,0,.2,1)';
-      requestAnimationFrame(function(){requestAnimationFrame(function(){hp.style.strokeDashoffset=0;});});
-    }catch(e){}
-  })();
 
   // scroll reveal
   (function(){
     var els=document.querySelectorAll('.reveal');
     if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
-    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
     els.forEach(function(e){io.observe(e)});
   })();
 </script>
