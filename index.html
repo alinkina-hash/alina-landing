@@ -27,7 +27,10 @@ body{font-family:'Montserrat',sans-serif;-webkit-font-smoothing:antialiased;colo
 
 /* ── ШАПКА (nav) ─────────────────────────────── */
 nav{background:var(--olive);padding:14px 48px;display:flex;align-items:center;justify-content:flex-start;position:fixed;top:0;left:0;right:0;z-index:30;gap:28px}
-.navlinks{display:flex;gap:26px;align-items:center}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-brand .spiral{width:26px;height:26px}
+.nav-brand .nav-name{font-family:'Raleway',sans-serif;font-size:18px;font-weight:300;color:var(--sandy);letter-spacing:.2em;text-transform:uppercase}
+.navlinks{display:flex;gap:26px;align-items:center;margin-left:auto}
 .navlinks a{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,.65);transition:color .2s}
 .navlinks a:hover{color:#fff}
 .nav-sep{width:1px;height:20px;background:rgba(255,255,255,.2)}
@@ -36,8 +39,8 @@ nav{background:var(--olive);padding:14px 48px;display:flex;align-items:center;ju
 .burger{display:none;background:none;border:none;color:rgba(255,255,255,.8);font-size:22px;cursor:pointer;padding:2px 6px;line-height:1;margin-left:auto}
 @media(max-width:780px){
   nav{padding:12px 20px;justify-content:space-between}
-  .burger{display:block}
-  .navlinks{display:none;flex-direction:column;align-items:flex-start;gap:0;position:absolute;top:100%;left:0;right:0;background:var(--olive);padding:8px 0;border-top:1px solid rgba(255,255,255,.1);z-index:40}
+  .burger{display:block;margin-left:auto}
+  .navlinks{display:none;flex-direction:column;align-items:flex-start;gap:0;position:absolute;top:100%;left:0;right:0;background:var(--olive);padding:8px 0;border-top:1px solid rgba(255,255,255,.1);z-index:40;margin-left:0}
   .navlinks.open{display:flex}
   .navlinks a{width:100%;padding:13px 20px;margin:0;font-size:12px;border-bottom:1px solid rgba(255,255,255,.06)}
   .navlinks a:last-child{border-bottom:none}
@@ -88,7 +91,8 @@ nav{background:var(--olive);padding:14px 48px;display:flex;align-items:center;ju
 .about{background:var(--ofwhite);padding:90px 48px}
 .about-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:60px;align-items:flex-start}
 .about .eyebrow{font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);margin-bottom:16px}
-.about h2{font-family:'Raleway',sans-serif;font-size:clamp(26px,3vw,36px);font-weight:300;color:var(--dark);line-height:1.25;margin-bottom:28px}
+.about h2{font-family:'Raleway',sans-serif;font-size:clamp(26px,3vw,36px);font-weight:300;color:var(--dark);line-height:1.25;margin-bottom:12px}
+.about-cert{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin-bottom:28px}
 .about-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px}
 .about-cols p{font-size:15px;font-weight:300;color:var(--ink-soft);line-height:1.75}
 .about-photo{flex-shrink:0;width:280px}
@@ -228,6 +232,10 @@ footer a.social:hover{border-color:#fff;background:rgba(255,255,255,.1)}
 
 <!-- ШАПКА -->
 <nav>
+  <a href="#" class="nav-brand">
+    <svg class="spiral" width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><path data-spiral="3"></path></svg>
+    <span class="nav-name">АЛИНА</span>
+  </a>
   <div class="navlinks" id="navlinks">
     <a href="#about" onclick="closeNav()">Обо мне</a>
     <a href="#method" onclick="closeNav()">Метод</a>
@@ -254,7 +262,6 @@ footer a.social:hover{border-color:#fff;background:rgba(255,255,255,.1)}
       <div class="hero-brand">
         <svg class="spiral" width="34" height="34" viewBox="0 0 100 100" aria-hidden="true"><path data-spiral="3"></path></svg>
         <span class="name">Алина</span>
-        <span class="tagline">сертифицированный вселенский терапевт</span>
       </div>
       <div class="hero-divider"></div>
       <h1>Понять, <em>почему именно у вас</em> — и изменить это</h1>
@@ -284,6 +291,7 @@ footer a.social:hover{border-color:#fff;background:rgba(255,255,255,.1)}
     <div>
       <div class="eyebrow">Обо мне</div>
       <h2>Меня зовут Алина. Помогаю увидеть причину там, где остались одни вопросы.</h2>
+      <p class="about-cert">сертифицированный вселенский терапевт</p>
       <div class="about-cols">
         <div>
           <p>[Здесь — ваш рассказ: путь, образование и сертификация, что привело вас к этой работе.]</p>
