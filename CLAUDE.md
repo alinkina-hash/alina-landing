@@ -105,4 +105,4 @@ reviews     → --dark
 
 Лендинг полностью готов. Все секции заполнены реальным контентом, Cal.com подключён.
 
-Следующий этап — бэк-офис (M3–M8 из `PROJECT.md`): CRM в Airtable, кабинет клиента, напоминания через Brevo + Make.com, сбор фидбэка.
+Следующий этап — бэк-офис (M3–M8 из `specs/PROJECT.md`): CRM и кабинет клиента в Notion, автоматизация и напоминания через Make.com, уведомления и сбор фидбэка через Telegram Bot. План выполнения: `docs/superpowers/plans/2026-06-24-backoffice-setup.md`, дизайн: `docs/superpowers/specs/2026-06-24-backoffice-design.md`, структура баз: `specs/NOTION_STRUCTURE.md`.
